@@ -1,0 +1,106 @@
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #2D2D30;
+	border: 1px solid #68217A;
+	border-bottom: 24px solid  #68217A;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
+#title-bar {
+	-webkit-app-region: drag;
+	height: 32px;	
+	padding: 0px;
+    margin: 0px;  
+	color: #ADADAD;
+	font-family: sans-serif;
+}
+
+#title {
+	position: fixed;
+	top: 0px;
+	left: 12px;	
+	line-height: 32px;
+	font-size: 14px;
+}
+
+#title-bar-btns {
+	-webkit-app-region: no-drag;
+	position: fixed;
+	top: 1px;
+	right: 0px;	
+}
+
+#title-bar-btns button {
+	height: 32px;
+	width: 32px;
+	background-color: transparent;
+	border: none;
+	color: #F1F1F1;
+	font-size: 16px;
+}
+
+#title-bar-btns button:hover {
+	background-color: #3F3F41;
+}
+
+#content {
+	padding: 12px;	
+	color: #CCCCCC;
+}
+
+a {
+  color: #68217A;
+}
+
+.button {
+    background-color: #555555; /* Green */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+    background-color: #F1F1F1; /* Green */
+    color: #555555;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }

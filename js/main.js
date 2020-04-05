@@ -1,4 +1,4 @@
-const { ipcRender } = require('electron')
+const { ipcMain, ipcRenderer, ipc } = require('electron')
 var child = require('child_process').execFile;
 
 console.log(document.getElementById("ruprog"))
@@ -12,4 +12,10 @@ document.getElementById("ruprog").addEventListener('click', ()=>{
         }
         console.log(data.toString())
     })
+})
+
+document.getElementById("btn1").addEventListener("click", () => {
+    console.log("send open");
+    files = ['1','2', '3']
+    ipcRenderer.send('open', files);
 })

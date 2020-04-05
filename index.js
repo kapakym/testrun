@@ -1,23 +1,57 @@
-const {app, BrowserWindow} = require('electron')
-const { path } = require('path')
+const {app, BrowserWindow, ipcMain, ipcRenderer, electron, Menu} = require('electron')
+const path = require('path')
+$ = require('jquery')
 
+
+// const appMenu = require('./js/appMenu')
+
+let secondWindow;
+let win;
 
 
 function createWindow() {
-    let win = new BrowserWindow({
+     win = new BrowserWindow({
         width:800,
         height:600,
+        frame: false,
         webPreferences: {
             nodeIntegration:true
         }
     })
 
-    win.loadFile('index.html')
-
+    win.loadFile(path.join(__dirname+'/html','index.html'))
+    win.webContents.openDevTools();
     win.on('closed', () => {
         win=null;
     })
 }
 
-app.whenReady().then(createWindow)
+    // const template = appMenu(app, appWindow)
+    // const menu = Menu.buildFromTemplate(template)
+    // Menu.setApplicationMenu(menu)
+    
 
+app.on('ready', () => {
+    
+    createWindow();
+})
+
+
+
+ipcMain.on("open", (e, files) => {
+    console.log("Open window ", files);
+    secondWindow = new BrowserWindow({
+        parent:win,
+        height:200,
+        width:200,
+        webPreferences: {
+            nodeIntegration:true
+        }
+    })
+    console.log("Open window");
+    secondWindow.loadFile("./index.html");
+    secondWindow.show();
+    secondWindow.on("close", (e) => {
+        secondWindow.destroy();
+    })
+})
