@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-
+<!-- <script src="../js/routie.js"></script> -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <!-- <link rel="stylesheet" href="../css/bootstrap.css"> -->
+    
+   
 </head>
 <body>
+  
     <div id="title-bar">
         <div id="title">My Life For The Code</div>
         <div id="title-bar-btns">
@@ -18,27 +20,43 @@
         </div>
    </div>
    <div>
-    <ul>
-        <li><a href="#home" id="btn1">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
+    <ul class="navbar">
+        <li class="navli"><a href="#home" id="btn1" class="navbtn">Home</a></li>
+        <li class="navli"><a href="#test1" class="navbtn">News</a></li>
+        <li class="navli"><a href="#contact" class="navbtn">Contact</a></li>
+        <li class="navli" style="float: right;"><a href="#about" class="navbtn">About</a></li>
       </ul>
    </div>
+  
 
-  <div id="content">
-    <p>Run program</p>
+  <div class="main">
+  <div class="menus"><p>Меню сайта</p></div>
+  <div class="contents" >
+    <div id="contentmain"></div>
+   
+    <!-- <p>Основной контент</p> -->
+  
     <!-- <a href="#" id=></a> -->
     <!-- <button id="btn1" class="button">Act-once button</button> -->
     <button id="ruprog" type="button">Run programm</button>
     Мы используем Node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
     и Electron <script>document.write(process.versions.electron)</script>.
+
   </div>
-  <script type="text/javascript" src="../js/renderer.js"></script>
+</div>
+  <!-- <div class="footer">
+    <p>Низ сайта</p>
+  </div> -->
 </body>
-<script type="text/javascript" src="../js/main.js"></script>
-<script type="text/javascript" src="../js/renderer.js"></script>
-<script src="../js/default.js"></script>
+
+
+
 
 </html>
+
+
+<script type="text/javascript" src="../js/renderer_index.js"></script>
+<script src="../js/buildwin.js"></script>
+
+

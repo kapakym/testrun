@@ -1,5 +1,6 @@
 const {app, BrowserWindow, ipcMain, ipcRenderer, electron, Menu} = require('electron')
 const path = require('path')
+// var routie = require("./js/routie.min")
 $ = require('jquery')
 
 
@@ -44,12 +45,13 @@ ipcMain.on("open", (e, files) => {
         parent:win,
         height:200,
         width:200,
+        frame: false,
         webPreferences: {
             nodeIntegration:true
         }
     })
     console.log("Open window");
-    secondWindow.loadFile("./index.html");
+    secondWindow.loadFile(path.join(__dirname+'/html','index.html'));
     secondWindow.show();
     secondWindow.on("close", (e) => {
         secondWindow.destroy();
